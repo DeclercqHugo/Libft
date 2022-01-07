@@ -3,16 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_substr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: hdeclerc <hdeclerc@student.s19.be>         +#+  +:+       +#+        */
+/*   By: hdeclerc <hdeclerc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/01/06 17:14:14 by hdeclerc          #+#    #+#             */
-/*   Updated: 2022/01/06 17:14:14 by hdeclerc         ###   ########.fr       */
+/*   Created: 2022/01/04 14:29:41 by hdeclerc          #+#    #+#             */
+/*   Updated: 2022/01/04 14:30:38 by hdeclerc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
-
-char *ft_substr(char const *s, unsigned int start, size_t len)
-{
-    char *tmp;
-}

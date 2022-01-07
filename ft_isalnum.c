@@ -3,16 +3,15 @@
 /*                                                        :::      ::::::::   */
 /*   ft_isalnum.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: hdeclerc <hdeclerc@student.s19.be>         +#+  +:+       +#+        */
+/*   By: hdeclerc <hdeclerc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/01/06 12:55:46 by hdeclerc          #+#    #+#             */
-/*   Updated: 2022/01/06 12:55:46 by hdeclerc         ###   ########.fr       */
+/*   Created: 2022/01/04 14:28:28 by hdeclerc          #+#    #+#             */
+/*   Updated: 2022/01/07 11:39:46 by hdeclerc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
 
-int	ft_isalnum(int c)
+int ft_isalnum(int c)
 {
 	if ((c >= 'a' && c <= 'z')
 		|| (c >= 'A' && c <= 'Z')
@@ -21,3 +20,4 @@ int	ft_isalnum(int c)
     else
 	    return (0);
 }
+

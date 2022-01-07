@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_memcpy.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: hdeclerc <hdeclerc@student.s19.be>         +#+  +:+       +#+        */
+/*   By: hdeclerc <hdeclerc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/01/06 15:13:03 by hdeclerc          #+#    #+#             */
-/*   Updated: 2022/01/06 15:13:03 by hdeclerc         ###   ########.fr       */
+/*   Created: 2022/01/04 14:29:02 by hdeclerc          #+#    #+#             */
+/*   Updated: 2022/01/07 12:12:40 by hdeclerc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,10 +17,14 @@ void	*ft_memcpy(void *dst, const void *src, size_t n)
 	size_t z;
 
     z = 0;
-    while (z < n)
+    if (dst || src)
     {
-        *(char *)(dst + z) = *(char *)(src + z);
-        z++;
+        while (z < n)
+        {
+            *(char *)(dst + z) = *(char *)(src + z);
+            z++;
+        }
+        return (dst);
     }
     return (dst);
 }

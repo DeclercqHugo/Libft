@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: marvin <marvin@student.42.fr>              +#+  +:+       +#+         #
+#    By: hdeclerc <hdeclerc@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2022/01/06 12:01:25 by marvin            #+#    #+#              #
-#    Updated: 2022/01/06 12:01:25 by marvin           ###   ########.fr        #
+#    Created: 2022/01/07 10:50:38 by hdeclerc          #+#    #+#              #
+#    Updated: 2022/01/07 10:50:49 by hdeclerc         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -45,11 +45,6 @@ OBJ = $(SRC:.c=.o)
 CC			=	clang
 
 all: $(NAME)
-
-so:
-	$(CC) -nostartfiles -fPIC $(CFLAGS) $(SRC)
-	gcc -nostartfiles -shared -o libft.so $(OBJ)
-
 
 $(NAME): $(OBJ)
 	@ar rc $(NAME) $(OBJ)
