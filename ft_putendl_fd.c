@@ -6,7 +6,16 @@
 /*   By: hdeclerc <hdeclerc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/04 14:29:08 by hdeclerc          #+#    #+#             */
-/*   Updated: 2022/01/04 14:30:23 by hdeclerc         ###   ########.fr       */
+/*   Updated: 2022/01/07 17:31:59 by hdeclerc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "libft.h"
+
+void ft_putendl_fd(char *s, int fd)
+{
+   if (!s)
+    return ;
+    write(fd, s, ft_strlen(s));
+    write(fd, "\n", 1);
+}

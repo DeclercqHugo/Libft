@@ -6,7 +6,7 @@
 #    By: hdeclerc <hdeclerc@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/01/07 10:50:38 by hdeclerc          #+#    #+#              #
-#    Updated: 2022/01/07 10:50:49 by hdeclerc         ###   ########.fr        #
+#    Updated: 2022/01/07 17:18:51 by hdeclerc         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -38,6 +38,11 @@ SRC = ft_atoi.c \
 	  ft_strrchr.c \
 	  ft_strlcpy.c \
 	  ft_substr.c \
+	  ft_strjoin.c \
+	  ft_putchar_fd.c \
+	  ft_putendl_fd.c \
+	  ft_putnbr_fd.c \
+	  ft_putstr_fd.c \
 
 
 OBJ = $(SRC:.c=.o)
