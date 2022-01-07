@@ -6,7 +6,7 @@
 /*   By: hdeclerc <hdeclerc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/04 14:28:45 by hdeclerc          #+#    #+#             */
-/*   Updated: 2022/01/07 10:37:46 by hdeclerc         ###   ########.fr       */
+/*   Updated: 2022/01/07 15:57:32 by hdeclerc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,6 @@ void	*ft_calloc(size_t count, size_t size)
 	tmp = (void *)malloc(count * size);
 	if (!tmp)
 		return (NULL);
-	ft_bzero(tmp, count);
+	ft_bzero(tmp, count * size);
 	return (tmp);
 }
