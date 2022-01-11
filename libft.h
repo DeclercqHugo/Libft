@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   libft.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: hdeclerc <hdeclerc@student.42.fr>          +#+  +:+       +#+        */
+/*   By: hdeclerc <hdeclerc@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/04 14:33:20 by hdeclerc          #+#    #+#             */
-/*   Updated: 2022/01/07 17:23:32 by hdeclerc         ###   ########.fr       */
+/*   Updated: 2022/01/11 16:59:08 by hdeclerc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,5 +49,30 @@ void ft_putnbr_fd(int n, int fd);
 void ft_putnbr_fd(int n, int fd);
 void
 	ft_putstr_fd(char *s, int fd);
+	char
+	*ft_itoa(int n);
+	
+char		**ft_split(char const *s, char c);
+char
+	*ft_strtrim(char const *s1, char const *set);
+	char	*ft_strmapi(char const *s, char (*f)(unsigned int, char));
+	void		ft_striteri(char *s, void (*f)(unsigned int, char *));
 
+typedef struct s_list
+{
+void *content;
+struct s_list *next;
+} t_list;
+
+
+t_list			*ft_lstnew(void *content);
+t_list			*ft_lstlast(t_list *lst);
+int				ft_lstsize(t_list *lst);
+void			ft_lstadd_front(t_list **lst, t_list *new);
+void			ft_lstadd_back(t_list **lst, t_list *new);
+void			ft_lstdelone(t_list *lst, void (*del)(void *));
+void			ft_lstclear(t_list **lst, void (*del)(void*));
+void			ft_lstiter(t_list *lst, void (*f)(void *));
+t_list			*ft_lstmap(t_list *lst, void *(*f)(void *),
+					void (*del)(void *));
 #endif

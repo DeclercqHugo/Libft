@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: hdeclerc <hdeclerc@student.42.fr>          +#+  +:+       +#+         #
+#    By: hdeclerc <hdeclerc@student.s19.be>         +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/01/07 10:50:38 by hdeclerc          #+#    #+#              #
-#    Updated: 2022/01/07 17:18:51 by hdeclerc         ###   ########.fr        #
+#    Updated: 2022/01/11 17:00:03 by hdeclerc         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -43,6 +43,20 @@ SRC = ft_atoi.c \
 	  ft_putendl_fd.c \
 	  ft_putnbr_fd.c \
 	  ft_putstr_fd.c \
+	  ft_itoa.c \
+	  ft_strtrim.c \
+	  ft_split.c \
+	  ft_strmapi.c \
+	  ft_striteri.c \
+	  ft_lstnew.c \
+	  ft_lstadd_front.c \
+	  ft_lstsize.c \
+	  ft_lstlast.c \
+	  ft_lstadd_back.c \
+	  ft_lstdelone.c \
+	  ft_lstclear.c \
+	  ft_lstiter.c \
+	  ft_lstmap.c \
 
 
 OBJ = $(SRC:.c=.o)
@@ -50,6 +64,10 @@ OBJ = $(SRC:.c=.o)
 CC			=	clang
 
 all: $(NAME)
+
+so:
+	$(CC) -nostartfiles -fPIC $(CFLAGS) $(SRC)
+	gcc -nostartfiles -shared -o libft.so $(OBJ)
 
 $(NAME): $(OBJ)
 	@ar rc $(NAME) $(OBJ)
