@@ -6,7 +6,7 @@
 /*   By: hdeclerc <hdeclerc@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/11 16:53:40 by hdeclerc          #+#    #+#             */
-/*   Updated: 2022/01/11 16:53:40 by hdeclerc         ###   ########.fr       */
+/*   Updated: 2022/01/12 14:31:29 by hdeclerc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 void	ft_lstadd_back(t_list **lst, t_list *new)
 {
-	t_list *aux;
+	t_list	*aux;
 
 	if (!new)
 		return ;

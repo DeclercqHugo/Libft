@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strtrim.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: hdeclerc <hdeclerc@student.s19.be>         +#+  +:+       +#+        */
+/*   By: hdeclerc <hdeclerc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/04 14:29:40 by hdeclerc          #+#    #+#             */
-/*   Updated: 2022/01/10 16:48:30 by hdeclerc         ###   ########.fr       */
+/*   Updated: 2022/01/12 15:46:23 by hdeclerc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,12 +36,14 @@ char
 	size_t	end;
 
 	start = 0;
+	if (!s1 || !set)
+		return (NULL);
 	while (s1[start] && ft_char_in_set(s1[start], set))
 		start++;
 	end = ft_strlen(s1);
 	while (end > start && ft_char_in_set(s1[end - 1], set))
 		end--;
-	str = (char*)malloc(sizeof(*s1) * (end - start + 1));
+	str = (char *)malloc(sizeof(*s1) * (end - start + 1));
 	if (!str)
 		return (NULL);
 	i = 0;

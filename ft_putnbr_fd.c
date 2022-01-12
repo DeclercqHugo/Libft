@@ -6,39 +6,23 @@
 /*   By: hdeclerc <hdeclerc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/04 14:29:09 by hdeclerc          #+#    #+#             */
-/*   Updated: 2022/01/07 17:21:27 by hdeclerc         ###   ########.fr       */
+/*   Updated: 2022/01/12 15:50:08 by hdeclerc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-  static int
-	ft_abs(int nbr)
+void	ft_putnbr_fd(int n, int fd)
 {
-	return ((nbr < 0) ? -nbr : nbr);
-}
+	long	nbr;
 
-void
-	ft_putnbr_fd(int n, int fd)
-{
-	char	str[13];
-	int		is_neg;
-	int		length;
-
-	is_neg = (n < 0);
-	ft_bzero(str, 13);
-	if (n == 0)
-		str[0] = '0';
-	length = 0;
-	while (n != 0)
+	nbr = n;
+	if (nbr < 0)
 	{
-		str[length++] = '0' + ft_abs(n % 10);
-		n = (n / 10);
+		nbr *= -1;
+		ft_putchar_fd('-', fd);
 	}
-	if (is_neg)
-		str[length] = '-';
-	else if (length > 0)
-		length--;
-	while (length >= 0)
-		write(fd, &str[length--], 1);
+	if (nbr > 9)
+		ft_putnbr_fd(nbr / 10, fd);
+	ft_putchar_fd(nbr % 10 + '0', fd);
 }

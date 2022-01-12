@@ -6,40 +6,43 @@
 /*   By: hdeclerc <hdeclerc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/04 14:28:35 by hdeclerc          #+#    #+#             */
-/*   Updated: 2022/01/07 15:56:00 by hdeclerc         ###   ########.fr       */
+/*   Updated: 2022/01/12 17:20:09 by hdeclerc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
+static int	is_space(char c)
+{
+	if (c == ' ' || (c >= '\t' && c <= '\r'))
+		return (1);
+	else
+		return (0);
+}
+
 int	ft_atoi(const char *str)
 {
-	unsigned long			res;
-	long			sign;
-	unsigned int	i;
+	unsigned long	res;
+	int				negative;
 
+	negative = 1;
 	res = 0;
-	sign = 1;
-	i = 0;
-	while (str[i] == ' ' || str[i] == '\t' || str[i] == '\n'
-		||str[i] == '\r' || str[i] == '\v' || str[i] == '\f')
-		i++;
-	if (str[i] == '-' || str[i] == '+')
+	while (is_space(*str))
+		str++;
+	if (*str == '-')
 	{
-		if (str[i] == '-')
-			sign = -1;
-		i++;
+		negative = -1;
+		str++;
 	}
-	while (str[i] >= '0' && str[i] <= '9')
+	else if (*str == '+')
+		str++;
+	while (*str >= '0' && *str <= '9')
 	{
-		res = res * 10 + str[i] - '0';
-		if (res > 9223372036854775807)
-        {
-            if (sign == -1)
-                return (0);
-            return (-1);
-        }
-		i++;
+		res = res * 10 + *str++ - '0';
+		if (res > 2147483647 && negative == 1)
+			return (-1);
+		if (res > 2147483648 && negative == -1)
+			return (0);
 	}
-	return ((int)(res * sign));
+	return (negative * res);
 }

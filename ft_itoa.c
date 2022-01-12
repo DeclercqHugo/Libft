@@ -6,46 +6,59 @@
 /*   By: hdeclerc <hdeclerc@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/04 14:28:57 by hdeclerc          #+#    #+#             */
-/*   Updated: 2022/01/11 15:46:48 by hdeclerc         ###   ########.fr       */
+/*   Updated: 2022/01/12 18:00:32 by hdeclerc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static char 		*ft_strcpy(char *dst, const char *src)
+static int	ft_nbsize(long n)
 {
-	size_t	i;
+	int		size;
 
-	i = 0;
-	while (src[i] != '\0')
+	size = 1;
+	while (n / 10)
 	{
-		dst[i] = src[i];
-		i++;
-		dst[i] = '\0';
+		n /= 10;
+		size++;
 	}
-	return (dst);
+	if (n < 0)
+		size++;
+	return (size);
 }
 
-char		*ft_itoa(int n)
+static long	ft_getunit(long n, int unit)
 {
-	char	*str;
+	while (unit--)
+		n /= 10;
+	return (n % 10);
+}
 
-	if (!(str = (char *)malloc(sizeof(char) * 2)))
-		return (NULL);
-	if (n == -2147483648)
-		return (ft_strcpy(str, "-2147483648"));
-	if (n < 0)
+char	*ft_itoa(int n)
+{
+	char	*res;
+	int		i;
+	int		j;
+	long	nbr;
+
+	nbr = n;
+	i = 0;
+	j = ft_nbsize(nbr);
+	res = (char *)malloc(sizeof(char) * (j + 1));
+	if (res)
 	{
-		str[0] = '-';
-		str[1] = '\0';
-		str = ft_strjoin(str, ft_itoa(-n));
+		if (nbr < 0)
+		{
+			res[i] = '-';
+			i++;
+			nbr *= -1;
+		}
+		while (j - i)
+		{
+			res[i] = '0' + ft_getunit(nbr, j - i - 1);
+			i++;
+		}
+		res[i] = '\0';
 	}
-	else if (n >= 10)
-		str = ft_strjoin(ft_itoa(n / 10), ft_itoa(n % 10));
-	else if (n < 10 && n >= 0)
-	{
-		str[0] = n + '0';
-		str[1] = '\0';
-	}
-	return (str);
+	return (res);
 }

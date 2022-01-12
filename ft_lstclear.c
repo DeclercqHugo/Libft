@@ -6,7 +6,7 @@
 /*   By: hdeclerc <hdeclerc@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/11 16:53:36 by hdeclerc          #+#    #+#             */
-/*   Updated: 2022/01/11 16:53:36 by hdeclerc         ###   ########.fr       */
+/*   Updated: 2022/01/12 14:32:13 by hdeclerc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 void	ft_lstclear(t_list **lst, void (*del)(void*))
 {
-	t_list *aux;
+	t_list	*aux;
 
 	if (!*lst)
 		return ;

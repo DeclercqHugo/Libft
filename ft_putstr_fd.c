@@ -6,14 +6,13 @@
 /*   By: hdeclerc <hdeclerc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/04 14:29:14 by hdeclerc          #+#    #+#             */
-/*   Updated: 2022/01/07 17:30:55 by hdeclerc         ###   ########.fr       */
+/*   Updated: 2022/01/12 15:23:25 by hdeclerc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void
-	ft_putstr_fd(char *s, int fd)
+void	ft_putstr_fd(char *s, int fd)
 {
 	if (!s)
 		return ;

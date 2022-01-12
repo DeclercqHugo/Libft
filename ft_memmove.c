@@ -6,7 +6,7 @@
 /*   By: hdeclerc <hdeclerc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/04 14:29:04 by hdeclerc          #+#    #+#             */
-/*   Updated: 2022/01/07 12:40:18 by hdeclerc         ###   ########.fr       */
+/*   Updated: 2022/01/12 15:21:38 by hdeclerc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 void	*ft_memmove(void *dst, const void *src, size_t len)
 {
 	int	z;
+
 	if (dst || src)
 	{
 		if (dst > src)
