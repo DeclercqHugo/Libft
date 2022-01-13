@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: hdeclerc <hdeclerc@student.s19.be>         +#+  +:+       +#+         #
+#    By: hdeclerc <hdeclerc@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/01/07 10:50:38 by hdeclerc          #+#    #+#              #
-#    Updated: 2022/01/11 17:00:03 by hdeclerc         ###   ########.fr        #
+#    Updated: 2022/01/13 17:39:41 by hdeclerc         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -48,18 +48,20 @@ SRC = ft_atoi.c \
 	  ft_split.c \
 	  ft_strmapi.c \
 	  ft_striteri.c \
-	  ft_lstnew.c \
-	  ft_lstadd_front.c \
-	  ft_lstsize.c \
-	  ft_lstlast.c \
-	  ft_lstadd_back.c \
-	  ft_lstdelone.c \
-	  ft_lstclear.c \
-	  ft_lstiter.c \
-	  ft_lstmap.c \
+	  
+SRC_BONUS = ft_lstnew.c \
+	 	ft_lstadd_front.c \
+	  	ft_lstsize.c \
+	  	ft_lstlast.c \
+	  	ft_lstadd_back.c \
+	  	ft_lstdelone.c \
+	  	ft_lstclear.c \
+	  	ft_lstiter.c \
+	  	ft_lstmap.c \
 
 
 OBJ = $(SRC:.c=.o)
+OBJS_BONUS	= ${SRC_BONUS:.c=.o}
 
 CC			=	clang
 
@@ -78,13 +80,21 @@ $(NAME): $(OBJ)
 %.o: %.c
 	@gcc $(FLAG) -c $< -o $@
 
+bonus:		${OBJS_BONUS}
+	@ar -rcs ${NAME} ${OBJS_BONUS}
+
 clean:
 	@rm -f $(OBJ)
 	@echo "OBJ deleted"
 
-fclean: clean
+fclean: 
+	@rm -f $(OBJ) $(OBJS_BONUS)
 	@rm -f $(NAME)
 	@echo "$(NAME) deleted"
+
+bclean:
+	@rm -f $(OBJS_BONUS)
+	@echo "OBJS_BONUS deleted"
 
 re: fclean all
 

@@ -1,11 +1,3 @@
-Protection : 
-    Split
-    Strmapi
-    putstr_fd
-
-    lstiter
-    lstmap
-
 Norminette All File 
 
 File : 
