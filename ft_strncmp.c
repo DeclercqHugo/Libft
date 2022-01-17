@@ -6,7 +6,7 @@
 /*   By: hdeclerc <hdeclerc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/04 14:29:36 by hdeclerc          #+#    #+#             */
-/*   Updated: 2022/01/13 17:46:49 by hdeclerc         ###   ########.fr       */
+/*   Updated: 2022/01/17 14:23:34 by hdeclerc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,8 +18,6 @@ int	ft_strncmp(const char *s1, const char *s2, size_t n)
 	unsigned char	*ptr_s2;
 	size_t			i;
 
-	if (!s1 || !s2)
-		return (0);
 	ptr_s1 = (unsigned char *)s1;
 	ptr_s2 = (unsigned char *)s2;
 	i = 0;
