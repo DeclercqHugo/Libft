@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strtrim.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: hdeclerc <hdeclerc@student.42.fr>          +#+  +:+       +#+        */
+/*   By: hdeclerc <hdeclerc@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/04 14:29:40 by hdeclerc          #+#    #+#             */
-/*   Updated: 2022/01/12 15:46:23 by hdeclerc         ###   ########.fr       */
+/*   Updated: 2022/02/21 17:36:06 by hdeclerc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,14 +15,14 @@
 static int
 	ft_char_in_set(char c, char const *set)
 {
-	size_t	i;
+	size_t	z;
 
-	i = 0;
-	while (set[i])
+	z = 0;
+	while (set[z])
 	{
-		if (set[i] == c)
+		if (set[z] == c)
 			return (1);
-		i++;
+		z++;
 	}
 	return (0);
 }
@@ -31,7 +31,7 @@ char
 	*ft_strtrim(char const *s1, char const *set)
 {
 	char	*str;
-	size_t	i;
+	size_t	z;
 	size_t	start;
 	size_t	end;
 
@@ -46,9 +46,9 @@ char
 	str = (char *)malloc(sizeof(*s1) * (end - start + 1));
 	if (!str)
 		return (NULL);
-	i = 0;
+	z = 0;
 	while (start < end)
-		str[i++] = s1[start++];
-	str[i] = 0;
+		str[z++] = s1[start++];
+	str[z] = 0;
 	return (str);
 }

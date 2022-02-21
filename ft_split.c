@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_split.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: hdeclerc <hdeclerc@student.42.fr>          +#+  +:+       +#+        */
+/*   By: hdeclerc <hdeclerc@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/04 14:29:16 by hdeclerc          #+#    #+#             */
-/*   Updated: 2022/01/13 17:47:35 by hdeclerc         ###   ########.fr       */
+/*   Updated: 2022/02/21 17:20:54 by hdeclerc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,34 +14,34 @@
 
 static int	ft_wordsize(const char *s, char c)
 {
-	int	i;
+	int	z;
 
-	i = 0;
+	z = 0;
 	while (*s && *s++ != c)
-		i++;
-	return (i);
+		z++;
+	return (z);
 }
 
 static int	ft_wordcount(const char *s, char c)
 {
-	int	wc;
+	int	z;
 
-	wc = 0;
+	z = 0;
 	while (*s)
 	{
 		while (*s == c)
 			s++;
 		if (*s)
-			wc++;
+			z++;
 		s += ft_wordsize(s, c);
 	}
-	return (wc);
+	return (z);
 }
 
-static void	*ft_freeall(char **tab, int i)
+static void	*ft_freeall(char **tab, int z)
 {
-	while (i--)
-		free(tab[i]);
+	while (z--)
+		free(tab[z]);
 	free(tab);
 	return (NULL);
 }
@@ -49,13 +49,13 @@ static void	*ft_freeall(char **tab, int i)
 char	**ft_split(const char *s, char c)
 {
 	char	**tab;
-	int		ws;
-	int		i;
+	int		y;
+	int		z;
 
 	if (!s)
 		return (NULL);
 	tab = (char **)ft_calloc(sizeof(char *), (ft_wordcount(s, c) + 1));
-	i = -1;
+	z = -1;
 	if (!tab)
 		return (NULL);
 	while (*s)
@@ -64,12 +64,12 @@ char	**ft_split(const char *s, char c)
 			s++;
 		if (*s)
 		{
-			ws = ft_wordsize(s, c);
-			tab[++i] = (char *)ft_calloc(sizeof(char), ws + 1);
-			if (!tab[i])
-				return (ft_freeall(tab, i));
-			tab[i] = ft_memcpy(tab[i], s, ws);
-			s += ws;
+			y = ft_wordsize(s, c);
+			tab[++z] = (char *)ft_calloc(sizeof(char), y + 1);
+			if (!tab[z])
+				return (ft_freeall(tab, z));
+			tab[z] = ft_memcpy(tab[z], s, y);
+			s += y;
 		}
 	}
 	return (tab);

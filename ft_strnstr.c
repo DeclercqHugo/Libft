@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strnstr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: hdeclerc <hdeclerc@student.42.fr>          +#+  +:+       +#+        */
+/*   By: hdeclerc <hdeclerc@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/04 14:29:37 by hdeclerc          #+#    #+#             */
-/*   Updated: 2022/01/17 14:23:32 by hdeclerc         ###   ########.fr       */
+/*   Updated: 2022/02/21 17:35:02 by hdeclerc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,24 +14,24 @@
 
 char	*ft_strnstr(const char *s1, const char *s2, size_t n)
 {
-	size_t	i;
-	size_t	j;
+	size_t	z;
+	size_t	y;
 
-	i = 0;
+	z = 0;
 	if (!*s2)
 		return ((char *)s1);
-	while (s1[i] && i < n)
+	while (s1[z] && z < n)
 	{
-		j = 0;
-		while (s1[i + j] == s2[j] && i + j < n)
+		y = 0;
+		while (s1[z + y] == s2[y] && z + y < n)
 		{
-			if (s2[j] == 0)
-				return ((char *)s1 + i);
-			j++;
+			if (s2[y] == 0)
+				return ((char *)s1 + z);
+			y++;
 		}
-		if (s2[j] == 0)
-			return ((char *)s1 + i);
-		i++;
+		if (s2[y] == 0)
+			return ((char *)s1 + z);
+		z++;
 	}
 	return (NULL);
 }

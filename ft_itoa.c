@@ -6,7 +6,7 @@
 /*   By: hdeclerc <hdeclerc@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/04 14:28:57 by hdeclerc          #+#    #+#             */
-/*   Updated: 2022/01/12 18:00:32 by hdeclerc         ###   ########.fr       */
+/*   Updated: 2022/02/21 16:35:14 by hdeclerc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,28 +37,28 @@ static long	ft_getunit(long n, int unit)
 char	*ft_itoa(int n)
 {
 	char	*res;
-	int		i;
-	int		j;
+	int		z;
+	int		y;
 	long	nbr;
 
 	nbr = n;
-	i = 0;
-	j = ft_nbsize(nbr);
-	res = (char *)malloc(sizeof(char) * (j + 1));
+	z = 0;
+	y = ft_nbsize(nbr);
+	res = (char *)malloc(sizeof(char) * (y + 1));
 	if (res)
 	{
 		if (nbr < 0)
 		{
-			res[i] = '-';
-			i++;
+			res[z] = '-';
+			z++;
 			nbr *= -1;
 		}
-		while (j - i)
+		while (y - z)
 		{
-			res[i] = '0' + ft_getunit(nbr, j - i - 1);
-			i++;
+			res[z] = '0' + ft_getunit(nbr, y - z - 1);
+			z++;
 		}
-		res[i] = '\0';
+		res[z] = '\0';
 	}
 	return (res);
 }

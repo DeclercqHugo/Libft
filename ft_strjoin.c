@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strjoin.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: hdeclerc <hdeclerc@student.42.fr>          +#+  +:+       +#+        */
+/*   By: hdeclerc <hdeclerc@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/04 14:29:22 by hdeclerc          #+#    #+#             */
-/*   Updated: 2022/01/12 15:44:04 by hdeclerc         ###   ########.fr       */
+/*   Updated: 2022/02/21 17:30:34 by hdeclerc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,8 +15,8 @@
 char	*ft_strjoin(char const *s1, char const *s2)
 {
 	char	*str;
-	size_t	i;
-	size_t	j;
+	size_t	z;
+	size_t	y;
 
 	if (!s1 || !s2)
 		return (NULL);
@@ -24,19 +24,19 @@ char	*ft_strjoin(char const *s1, char const *s2)
 			sizeof(*s1) * (ft_strlen(s1) + ft_strlen(s2) + 1));
 	if (!str)
 		return (NULL);
-	i = 0;
-	j = 0;
-	while (s1[i])
+	z = 0;
+	y = 0;
+	while (s1[z])
 	{
-		str[j++] = s1[i];
-		i++;
+		str[y++] = s1[z];
+		z++;
 	}
-	i = 0;
-	while (s2[i])
+	z = 0;
+	while (s2[z])
 	{
-		str[j++] = s2[i];
-		i++;
+		str[y++] = s2[z];
+		z++;
 	}
-	str[j] = 0;
+	str[y] = 0;
 	return (str);
 }
