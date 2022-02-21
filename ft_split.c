@@ -6,7 +6,7 @@
 /*   By: hdeclerc <hdeclerc@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/04 14:29:16 by hdeclerc          #+#    #+#             */
-/*   Updated: 2022/02/21 17:20:54 by hdeclerc         ###   ########.fr       */
+/*   Updated: 2022/02/21 20:19:40 by hdeclerc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ static int	ft_wordsize(const char *s, char c)
 	int	z;
 
 	z = 0;
-	while (*s && *s++ != c)
+	while (s[z] && s[z] != c)
 		z++;
 	return (z);
 }
@@ -27,11 +27,11 @@ static int	ft_wordcount(const char *s, char c)
 	int	z;
 
 	z = 0;
-	while (*s)
+	while (s[z])
 	{
-		while (*s == c)
-			s++;
-		if (*s)
+		while (s[z]== c)
+			z++;
+		if (s[z])
 			z++;
 		s += ft_wordsize(s, c);
 	}
