@@ -6,7 +6,7 @@
 #    By: hdeclerc <hdeclerc@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/01/07 10:50:38 by hdeclerc          #+#    #+#              #
-#    Updated: 2022/01/13 17:39:41 by hdeclerc         ###   ########.fr        #
+#    Updated: 2022/02/22 13:55:10 by hdeclerc         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -91,10 +91,6 @@ fclean:
 	@rm -f $(OBJ) $(OBJS_BONUS)
 	@rm -f $(NAME)
 	@echo "$(NAME) deleted"
-
-bclean:
-	@rm -f $(OBJS_BONUS)
-	@echo "OBJS_BONUS deleted"
 
 re: fclean all
 

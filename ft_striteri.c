@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_striteri.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: hdeclerc <hdeclerc@student.s19.be>         +#+  +:+       +#+        */
+/*   By: hdeclerc <hdeclerc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/04 14:29:21 by hdeclerc          #+#    #+#             */
-/*   Updated: 2022/02/21 17:28:32 by hdeclerc         ###   ########.fr       */
+/*   Updated: 2022/02/22 13:16:52 by hdeclerc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ void	ft_striteri(char *s, void (*f)(unsigned int, char *))
 	unsigned int	z;
 
 	z = 0;
-	if (!s)
+	if (!s || !f)
 		return ;
 	while (s[z] != '\0')
 	{

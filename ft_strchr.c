@@ -6,7 +6,7 @@
 /*   By: hdeclerc <hdeclerc@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/04 14:29:18 by hdeclerc          #+#    #+#             */
-/*   Updated: 2022/02/21 20:17:20 by hdeclerc         ###   ########.fr       */
+/*   Updated: 2022/02/22 11:06:16 by hdeclerc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,18 +14,16 @@
 
 char	*ft_strchr(const char *s, int c)
 {
-	int		z;
-	char	*y;
+	int	i;
 
-	z = 0;
-	y = (char *)s;
-	while (s[z])
+	i = 0;
+	while (s[i])
 	{
-		if (s[z] == (char)c)
-			return (y[z]);
-		z++;
+		if (s[i] == (char)c)
+			return ((char *)(s + i));
+		i++;
 	}
-	if (s[z] == (char)c)
-		return (y[z]);
+	if (s[i] == (char)c)
+		return ((char *)(s + i));
 	return (NULL);
 }

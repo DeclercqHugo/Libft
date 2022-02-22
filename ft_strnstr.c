@@ -6,7 +6,7 @@
 /*   By: hdeclerc <hdeclerc@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/04 14:29:37 by hdeclerc          #+#    #+#             */
-/*   Updated: 2022/02/21 20:20:18 by hdeclerc         ###   ########.fr       */
+/*   Updated: 2022/02/22 11:07:26 by hdeclerc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,24 +14,24 @@
 
 char	*ft_strnstr(const char *s1, const char *s2, size_t n)
 {
-	size_t	z;
-	size_t	y;
+	size_t	i;
+	size_t	j;
 
-	z = 0;
+	i = 0;
 	if (!*s2)
 		return ((char *)s1);
-	while (s1[z] && z < n)
+	while (s1[i] && i < n)
 	{
-		y = 0;
-		while (s1[z + y] == s2[y] && z + y < n)
+		j = 0;
+		while (s1[i + j] == s2[j] && i + j < n)
 		{
-			if (s2[y] == 0)
-				return ((char *)s1 + z);
-			y++;
+			if (s2[j] == 0)
+				return ((char *)s1 + i);
+			j++;
 		}
-		if (s2[y] == 0)
-			return ((char *)s1 + z);
-		z++;
+		if (s2[j] == 0)
+			return ((char *)s1 + i);
+		i++;
 	}
 	return (NULL);
 }

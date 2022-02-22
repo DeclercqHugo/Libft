@@ -6,7 +6,7 @@
 /*   By: hdeclerc <hdeclerc@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/04 14:28:58 by hdeclerc          #+#    #+#             */
-/*   Updated: 2022/02/21 19:48:27 by hdeclerc         ###   ########.fr       */
+/*   Updated: 2022/02/22 11:03:40 by hdeclerc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ void	*ft_memchr(const void *s, int c, size_t n)
 	while (z < n)
 	{
 		if ((unsigned char)str[z] == (unsigned char)c)
-			return (str[z]);
+			return ((char *)s + z);
 		z++;
 	}
 	return (NULL);
