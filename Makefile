@@ -6,7 +6,7 @@
 #    By: hdeclerc <hdeclerc@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/01/07 10:50:38 by hdeclerc          #+#    #+#              #
-#    Updated: 2022/05/13 16:35:57 by hdeclerc         ###   ########.fr        #
+#    Updated: 2022/05/16 13:25:41 by hdeclerc         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -107,10 +107,10 @@ libftstd:
 	@make all -s FT=${FT_STD} OBJS=${OBJS_STD}
 
 libftprintf:
-	@make all -s FT=${FT_PRINTF} OBJS="${OBJS_STD} ${OBJS_PRINTF}"
+	@make all -s FT=${FT_PRINTF} OBJS="${OBJS_PRINTF}"
 
 libftgnl:
-	@make all -s FT=${FT_GNL} OBJS="${OBJS_STD} ${OBJS_GNL}"
+	@make all -s FT=${FT_GNL} OBJS="${OBJS_GNL}"
 
 clean:
 	@rm -f ${OBJS_STD} ${OBJS_PRINTF} ${OBJS_GNL}
