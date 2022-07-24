@@ -99,18 +99,21 @@ OBJS			:=	${OBJS_STD} ${OBJS_PRINTF} ${OBJS_GNL}
 
 $(NAME):		${OBJS}
 	@ar -rcs $@ $^
-	@echo "Library created !"
+	@echo "\033[32mLibrary Created! ᕦ(\033[31m♥\033[32m_\033[31m♥\033[32m)ᕤ\n"
 
 all:			${NAME}
 
 libftstd:
 	@make all -s FT=${FT_STD} OBJS=${OBJS_STD}
+	@echo "\033[32mLibftstd Compiled! ᕦ(\033[31m♥\033[32m_\033[31m♥\033[32m)ᕤ\n"
 
 libftprintf:
 	@make all -s FT=${FT_PRINTF} OBJS="${OBJS_PRINTF}"
+	@echo "\033[32mPrintf Compiled! ᕦ(\033[31m♥\033[32m_\033[31m♥\033[32m)ᕤ\n"
 
 libftgnl:
 	@make all -s FT=${FT_GNL} OBJS="${OBJS_GNL}"
+	@echo "\033[32mGNL Compiled! ᕦ(\033[31m♥\033[32m_\033[31m♥\033[32m)ᕤ\n"
 
 clean:
 	@rm -f ${OBJS_STD} ${OBJS_PRINTF} ${OBJS_GNL}
